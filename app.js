@@ -63,17 +63,51 @@ function createImageProbe(source) {
   });
 }
 
-function setFrameState(slot, source, isLoaded) {
+function sourceLoadsInstantly(source) {
+  return source.startsWith("assets/") || source.startsWith("data:") || source.startsWith("blob:");
+}
+
+function updateSlotLoadState(slot) {
+  const frames = photoFrames[slot] || [];
+  const isLoaded = frames.every((frame) => {
+    const image = frame.querySelector("[data-photo-img]");
+    return !image || (image.complete && image.naturalWidth > 0);
+  });
+
+  frames.forEach((frame) => {
+    frame.classList.toggle("is-loaded", isLoaded);
+  });
+}
+
+function setFrameState(slot, source, isLoaded = false) {
   const frames = photoFrames[slot] || [];
 
   frames.forEach((frame) => {
     const image = frame.querySelector("[data-photo-img]");
-    if (image && source) {
+    if (image && source && image.getAttribute("src") !== source) {
       image.src = source;
     }
     frame.classList.toggle("is-loaded", isLoaded);
   });
+
+  if (!isLoaded) {
+    updateSlotLoadState(slot);
+  }
 }
+
+Object.entries(photoFrames).forEach(([slot, frames]) => {
+  frames.forEach((frame) => {
+    const image = frame.querySelector("[data-photo-img]");
+
+    image?.addEventListener("load", () => {
+      updateSlotLoadState(slot);
+    });
+
+    image?.addEventListener("error", () => {
+      frame.classList.remove("is-loaded");
+    });
+  });
+});
 
 async function applyPhotoSource(slot, source, persist = false) {
   const slotConfig = PHOTO_SLOTS[slot];
@@ -83,6 +117,14 @@ async function applyPhotoSource(slot, source, persist = false) {
 
   if (!source) {
     setFrameState(slot, slotConfig.defaultSrc, false);
+    return;
+  }
+
+  if (sourceLoadsInstantly(source)) {
+    setFrameState(slot, source, false);
+    if (persist) {
+      localStorage.setItem(slotConfig.storageKey, source);
+    }
     return;
   }
 
@@ -144,14 +186,12 @@ function syncUrlInputValues() {
   });
 }
 
-async function initializePhotos() {
-  const initializations = Object.entries(PHOTO_SLOTS).map(async ([slot, config]) => {
+function initializePhotos() {
+  Object.entries(PHOTO_SLOTS).forEach(([slot, config]) => {
     const storedValue = localStorage.getItem(config.storageKey);
     const source = storedValue || config.defaultSrc;
-    await applyPhotoSource(slot, source, false);
+    applyPhotoSource(slot, source, false);
   });
-
-  await Promise.all(initializations);
   syncUrlInputValues();
 }
 
@@ -399,6 +439,10 @@ function startCanvasAtmosphere() {
     return;
   }
 
+  if (window.innerWidth <= 820) {
+    return;
+  }
+
   function resizeCanvas() {
     width = window.innerWidth;
     height = window.innerHeight;
@@ -517,9 +561,7 @@ function startCanvasAtmosphere() {
 }
 
 async function bootInvitation() {
-  await initializePhotos();
   refreshSceneMetrics(true);
-  startCanvasAtmosphere();
   toggleStudio(false);
 
   window.addEventListener("scroll", requestSceneUpdate, { passive: true });
@@ -535,6 +577,9 @@ async function bootInvitation() {
       studioToggle.textContent = getStudioToggleLabel(studio.classList.contains("is-open"));
     }
   });
+
+  initializePhotos();
+  startCanvasAtmosphere();
 }
 
 bootInvitation();

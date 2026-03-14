@@ -8,11 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="assets/adot-banquet.jpg" />
-    <link rel="preload" as="image" href="assets/amaara-aisle.jpg" />
+    <link rel="preload" as="image" href="assets/dhruv-deeksha-1.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -128,6 +127,8 @@
                     alt="Dhruv and Deeksha portrait one"
                     data-photo-img="portraitOne"
                     loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
                   />
                   <div class="photo-fallback">
                     <p class="photo-fallback__eyebrow">Lead Portrait</p>
@@ -147,6 +148,8 @@
                     alt="Dhruv and Deeksha portrait two in the hero"
                     data-photo-img="portraitTwo"
                     loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
                   />
                   <div class="photo-fallback photo-fallback--sky">
                     <p class="photo-fallback__eyebrow">Second Portrait</p>

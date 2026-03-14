@@ -1284,6 +1284,16 @@ code {
   padding: 5.5rem 0 4.5rem;
 }
 
+.love-story,
+.quirks,
+.letters,
+.venue-gallery,
+.itinerary,
+.finale {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 .verse-band p {
   margin: 0;
   text-align: center;
@@ -2316,6 +2326,18 @@ code {
 }
 
 @media (max-width: 640px) {
+  .page-glow {
+    display: none;
+  }
+
+  .noise {
+    opacity: 0.08;
+  }
+
+  .top-ribbon__track {
+    animation-duration: 40s;
+  }
+
   .hero {
     min-height: 228svh;
   }
