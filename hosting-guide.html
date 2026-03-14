@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#160d12" />
+    <title>GitHub and Hosting Guide | Dhruv &amp; Deeksha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="hosting-guide.css" />
+  </head>
+  <body>
+    <div class="guide-noise" aria-hidden="true"></div>
+    <header class="guide-hero">
+      <div class="guide-hero__inner">
+        <p class="guide-eyebrow">Website Setup Guide</p>
+        <h1>Read the GitHub and hosting steps like a proper website.</h1>
+        <p class="guide-hero__lede">
+          This page turns the hosting README into a simple guided walkthrough. It covers GitHub setup,
+          GitHub Pages hosting, and the exact way to add the couple portraits to the live invitation.
+        </p>
+        <div class="guide-hero__actions">
+          <a class="guide-button" href="./index.html">Back to invitation</a>
+          <a class="guide-button guide-button--ghost" href="#github-steps">Jump to setup steps</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="guide-shell">
+      <aside class="guide-nav">
+        <p class="guide-nav__title">On This Page</p>
+        <a href="#overview">Overview</a>
+        <a href="#github-steps">Connect GitHub</a>
+        <a href="#pages-steps">Host on GitHub Pages</a>
+        <a href="#photos">Add Couple Photos</a>
+        <a href="#updates">Update Later</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </aside>
+
+      <div class="guide-content">
+        <section class="guide-section" id="overview">
+          <div class="guide-card">
+            <p class="guide-eyebrow">Overview</p>
+            <h2>What this guide helps you do</h2>
+            <div class="guide-grid guide-grid--three">
+              <article class="guide-mini-card">
+                <span>1</span>
+                <h3>Create the GitHub repository</h3>
+                <p>Push this wedding site into GitHub from your Mac.</p>
+              </article>
+              <article class="guide-mini-card">
+                <span>2</span>
+                <h3>Host the site online</h3>
+                <p>Use GitHub Pages so your website gets a public link.</p>
+              </article>
+              <article class="guide-mini-card">
+                <span>3</span>
+                <h3>Add the real couple portraits</h3>
+                <p>Replace the placeholder files so guests see the real photos.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide-section" id="github-steps">
+          <div class="guide-card">
+            <p class="guide-eyebrow">Part 1</p>
+            <h2>Connect this project to GitHub</h2>
+            <ol class="guide-steps">
+              <li>
+                <h3>Create the GitHub repository in your browser</h3>
+                <p>Go to <a href="https://github.com">github.com</a> and make a new repository.</p>
+                <ul class="guide-list">
+                  <li>Choose a name like `dhruv-deeksha-wedding`.</li>
+                  <li>Choose `Public` if you want GitHub Pages to be simple.</li>
+                  <li>Do not add a README, `.gitignore`, or license on GitHub.</li>
+                </ul>
+              </li>
+              <li>
+                <h3>Set your Git identity on this Mac</h3>
+                <p>Run this once if Git has not been configured yet.</p>
+                <div class="guide-code">
+                  <div class="guide-code__bar">
+                    <span>Terminal</span>
+                    <button type="button" data-copy-target="code-git-identity">Copy</button>
+                  </div>
+                  <pre><code id="code-git-identity">git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+                </div>
+              </li>
+              <li>
+                <h3>Create the first commit</h3>
+                <p>Run this inside this project folder.</p>
+                <div class="guide-code">
+                  <div class="guide-code__bar">
+                    <span>Terminal</span>
+                    <button type="button" data-copy-target="code-first-commit">Copy</button>
+                  </div>
+                  <pre><code id="code-first-commit">git add .
+git commit -m "Initial wedding invitation site"</code></pre>
+                </div>
+              </li>
+              <li>
+                <h3>Connect the local folder to your GitHub repository</h3>
+                <p>Replace the example URL below with your actual repository URL from GitHub.</p>
+                <div class="guide-code">
+                  <div class="guide-code__bar">
+                    <span>Terminal</span>
+                    <button type="button" data-copy-target="code-remote">Copy</button>
+                  </div>
+                  <pre><code id="code-remote">git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git push -u origin main</code></pre>
+                </div>
+                <p>If Git says `origin already exists`, use this instead:</p>
+                <div class="guide-code">
+                  <div class="guide-code__bar">
+                    <span>Terminal</span>
+                    <button type="button" data-copy-target="code-reset-remote">Copy</button>
+                  </div>
+                  <pre><code id="code-reset-remote">git remote set-url origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git push -u origin main</code></pre>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="guide-section" id="pages-steps">
+          <div class="guide-card">
+            <p class="guide-eyebrow">Part 2</p>
+            <h2>Host the website using GitHub Pages</h2>
+            <ol class="guide-steps">
+              <li>
+                <h3>Open your repository on GitHub</h3>
+                <p>Once the push is complete, open the project repository in your browser.</p>
+              </li>
+              <li>
+                <h3>Turn on GitHub Pages</h3>
+                <ul class="guide-list">
+                  <li>Click `Settings`.</li>
+                  <li>Click `Pages` in the sidebar.</li>
+                  <li>Under `Source`, choose `Deploy from a branch`.</li>
+                  <li>Select branch `main`.</li>
+                  <li>Select folder `/ (root)`.</li>
+                  <li>Click `Save`.</li>
+                </ul>
+              </li>
+              <li>
+                <h3>Wait for GitHub Pages to publish the site</h3>
+                <p>
+                  GitHub usually gives you a live URL like
+                  `https://YOUR-USERNAME.github.io/YOUR-REPO/`.
+                </p>
+              </li>
+              <li>
+                <h3>Open the live URL and test it</h3>
+                <p>Check the page on desktop and phone after the deployment finishes.</p>
+              </li>
+            </ol>
+
+            <div class="guide-callout">
+              <strong>Important:</strong> `index.html` must stay in the root folder for GitHub Pages to
+              serve the site correctly.
+            </div>
+          </div>
+        </section>
+
+        <section class="guide-section" id="photos">
+          <div class="guide-card">
+            <p class="guide-eyebrow">Part 3</p>
+            <h2>How to add the real couple images</h2>
+            <div class="guide-grid guide-grid--two">
+              <article class="guide-subcard">
+                <h3>Permanent live website method</h3>
+                <p>This is the correct method for the final public wedding website.</p>
+                <ul class="guide-list">
+                  <li>Choose your first main portrait.</li>
+                  <li>Choose your second portrait.</li>
+                  <li>Rename them exactly to `dhruv-deeksha-1.jpg` and `dhruv-deeksha-2.jpg`.</li>
+                  <li>Place them in the `assets` folder and replace the current files.</li>
+                </ul>
+                <div class="guide-code">
+                  <div class="guide-code__bar">
+                    <span>Terminal</span>
+                    <button type="button" data-copy-target="code-photos">Copy</button>
+                  </div>
+                  <pre><code id="code-photos">git add assets/dhruv-deeksha-1.jpg assets/dhruv-deeksha-2.jpg
+git commit -m "Add final couple portraits"
+git push</code></pre>
+                </div>
+              </article>
+
+              <article class="guide-subcard">
+                <h3>Temporary preview method</h3>
+                <p>This is only for testing in your own browser.</p>
+                <ul class="guide-list">
+                  <li>Open the invitation website.</li>
+                  <li>Click `Load your portraits`.</li>
+                  <li>Use `Portrait one` and `Portrait two` to upload images or paste public image URLs.</li>
+                  <li>The page updates instantly, but only in that browser.</li>
+                </ul>
+                <div class="guide-callout guide-callout--soft">
+                  This does not publish the photos to GitHub. For the final live site, replace the real
+                  image files in `assets/`.
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide-section" id="updates">
+          <div class="guide-card">
+            <p class="guide-eyebrow">Part 4</p>
+            <h2>How to update the website later</h2>
+            <p>Any time you change text, photos, colors, or sections, use the same three commands:</p>
+            <div class="guide-code">
+              <div class="guide-code__bar">
+                <span>Terminal</span>
+                <button type="button" data-copy-target="code-updates">Copy</button>
+              </div>
+              <pre><code id="code-updates">git add .
+git commit -m "Describe your update"
+git push</code></pre>
+            </div>
+            <p>GitHub Pages will redeploy automatically after each push.</p>
+          </div>
+        </section>
+
+        <section class="guide-section" id="troubleshooting">
+          <div class="guide-card">
+            <p class="guide-eyebrow">Troubleshooting</p>
+            <h2>If the site does not show properly</h2>
+            <ul class="guide-list">
+              <li>Make sure `index.html` is still in the root folder.</li>
+              <li>Make sure GitHub Pages is using `main` and `/ (root)`.</li>
+              <li>Make sure your latest changes were pushed with `git push`.</li>
+              <li>Wait a few minutes and refresh the `Pages` settings tab.</li>
+              <li>Open the repository `Actions` tab if GitHub shows a deployment problem.</li>
+            </ul>
+
+            <div class="guide-footer-actions">
+              <a class="guide-button" href="./index.html">Open invitation again</a>
+              <a class="guide-button guide-button--ghost" href="#overview">Back to top</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script defer src="hosting-guide.js"></script>
+  </body>
+</html>

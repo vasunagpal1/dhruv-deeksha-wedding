@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder portrait one</title>
+  <desc id="desc">Royal gradient placeholder prompting the user to upload Dhruv and Deeksha portrait one.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#6c345f" />
+      <stop offset="55%" stop-color="#9f5c80" />
+      <stop offset="100%" stop-color="#6f84ba" />
+    </linearGradient>
+    <radialGradient id="glow" cx="28%" cy="22%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1800" rx="260" fill="url(#bg)" />
+  <rect x="42" y="42" width="1116" height="1716" rx="230" fill="none" stroke="rgba(255,255,255,0.34)" />
+  <rect width="1200" height="1800" rx="260" fill="url(#glow)" />
+  <text x="110" y="260" fill="#f7efe2" font-family="Cinzel, serif" font-size="44" letter-spacing="18">LEAD PORTRAIT</text>
+  <text x="110" y="400" fill="#fff7ee" font-family="Cormorant Garamond, serif" font-size="118" font-weight="700">Load Photo One</text>
+  <text x="110" y="520" fill="#fff7ee" font-family="Cormorant Garamond, serif" font-size="112" font-weight="700">for Dhruv &amp;</text>
+  <text x="110" y="630" fill="#fff7ee" font-family="Cormorant Garamond, serif" font-size="112" font-weight="700">Deeksha</text>
+  <text x="110" y="790" fill="#f7efe2" font-family="Manrope, sans-serif" font-size="48">Use the photo studio panel or replace</text>
+  <text x="110" y="860" fill="#f7efe2" font-family="Manrope, sans-serif" font-size="48">assets/dhruv-deeksha-1.jpg before deploy.</text>
+  <rect x="110" y="1430" width="980" height="170" rx="85" fill="rgba(12,8,14,0.38)" />
+  <text x="170" y="1528" fill="#fff7ee" font-family="Cinzel, serif" font-size="36" letter-spacing="10">THE PROCESSION BEGINS HERE</text>
+</svg>

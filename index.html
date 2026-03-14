@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#140c11" />
+    <title>Dhruv &amp; Deeksha | A Dot x Amaara Wedding Weekend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="assets/adot-banquet.jpg" />
+    <link rel="preload" as="image" href="assets/amaara-aisle.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="luxCanvas" class="lux-canvas" aria-hidden="true"></canvas>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="page-glow page-glow--left" aria-hidden="true"></div>
+    <div class="page-glow page-glow--right" aria-hidden="true"></div>
+
+    <header class="top-ribbon" aria-label="Decorative wedding ribbon">
+      <div class="top-ribbon__track">
+        <span>Dhruv &amp; Deeksha</span>
+        <span>Cocktail Night at A Dot by GNH</span>
+        <span>Wedding Day at Amaara Farms</span>
+        <span>From clinking crystal to sacred pheras</span>
+        <span>Dhruv &amp; Deeksha</span>
+        <span>Cocktail Night at A Dot by GNH</span>
+        <span>Wedding Day at Amaara Farms</span>
+        <span>From clinking crystal to sacred pheras</span>
+      </div>
+    </header>
+
+    <aside class="studio" data-studio>
+      <button class="studio__toggle" type="button" data-toggle-studio aria-expanded="false">
+        Load your portraits
+      </button>
+      <div class="studio__panel" aria-live="polite">
+        <p class="studio__eyebrow">Photo Studio</p>
+        <h2 class="studio__title">Drop in the real couple photos</h2>
+        <p class="studio__body">
+          The venue mood is already built in. Now this page only needs Dhruv and Deeksha in the frames.
+          Choose photos from your device or paste public image URLs.
+        </p>
+        <p class="studio__hint">
+          For a public shared link, keep the final portraits as real files in
+          <code>assets/dhruv-deeksha-1.jpg</code> and <code>assets/dhruv-deeksha-2.jpg</code>, or use
+          public image URLs below.
+        </p>
+
+        <label class="studio__field">
+          <span>Portrait one</span>
+          <input
+            type="url"
+            placeholder="Paste a public image URL"
+            data-photo-url="portraitOne"
+            autocomplete="off"
+          />
+          <input type="file" accept="image/*" data-photo-file="portraitOne" />
+        </label>
+
+        <label class="studio__field">
+          <span>Portrait two</span>
+          <input
+            type="url"
+            placeholder="Paste a public image URL"
+            data-photo-url="portraitTwo"
+            autocomplete="off"
+          />
+          <input type="file" accept="image/*" data-photo-file="portraitTwo" />
+        </label>
+
+        <div class="studio__actions">
+          <button class="studio__clear" type="button" data-clear-photos>Reset portraits</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="site">
+      <section class="scene hero" data-scene>
+        <div class="scene__sticky hero__sticky">
+          <div class="hero__ambient" aria-hidden="true">
+            <span class="hero__ambient-orb hero__ambient-orb--one"></span>
+            <span class="hero__ambient-orb hero__ambient-orb--two"></span>
+            <span class="hero__ambient-orb hero__ambient-orb--three"></span>
+            <span class="hero__ambient-petal hero__ambient-petal--one"></span>
+            <span class="hero__ambient-petal hero__ambient-petal--two"></span>
+            <span class="hero__ambient-petal hero__ambient-petal--three"></span>
+            <span class="hero__ambient-petal hero__ambient-petal--four"></span>
+          </div>
+
+          <div class="container hero__frame">
+            <div class="hero__theatre" aria-hidden="true">
+              <span class="hero__halo"></span>
+              <span class="hero__back-arch"></span>
+              <span class="hero__floor-glow"></span>
+              <span class="hero__steps"></span>
+              <span class="hero__pillar hero__pillar--outer-left"></span>
+              <span class="hero__pillar hero__pillar--inner-left"></span>
+              <span class="hero__pillar hero__pillar--inner-right"></span>
+              <span class="hero__pillar hero__pillar--outer-right"></span>
+              <span class="hero__beam"></span>
+              <span class="hero__canopy"></span>
+              <span class="hero__fringe"></span>
+              <span class="hero__floral hero__floral--left"></span>
+              <span class="hero__floral hero__floral--right"></span>
+              <span class="hero__garland hero__garland--one"></span>
+              <span class="hero__garland hero__garland--two"></span>
+              <span class="hero__garland hero__garland--three"></span>
+              <span class="hero__curtain hero__curtain--left"></span>
+              <span class="hero__curtain hero__curtain--right"></span>
+              <span class="hero__jaali"></span>
+              <span class="hero__diya hero__diya--left"></span>
+              <span class="hero__diya hero__diya--right"></span>
+            </div>
+
+            <div class="hero__portrait-cluster">
+              <div class="hero__portrait-window">
+                <figure
+                  class="photo-card photo-card--arched photo-card--hero photo-card--hero-main interactive-tilt"
+                  data-photo-target="portraitOne"
+                >
+                  <img
+                    src="assets/dhruv-deeksha-1.jpg"
+                    alt="Dhruv and Deeksha portrait one"
+                    data-photo-img="portraitOne"
+                    loading="eager"
+                  />
+                  <div class="photo-fallback">
+                    <p class="photo-fallback__eyebrow">Lead Portrait</p>
+                    <h2 class="photo-fallback__title">Load your opening portrait</h2>
+                    <p class="photo-fallback__body">
+                      Use the photo studio to drop in the couple photo that should greet every guest.
+                    </p>
+                  </div>
+                </figure>
+
+                <figure
+                  class="photo-card photo-card--arched photo-card--hero-accent interactive-tilt"
+                  data-photo-target="portraitTwo"
+                >
+                  <img
+                    src="assets/dhruv-deeksha-2.jpg"
+                    alt="Dhruv and Deeksha portrait two in the hero"
+                    data-photo-img="portraitTwo"
+                    loading="eager"
+                  />
+                  <div class="photo-fallback photo-fallback--sky">
+                    <p class="photo-fallback__eyebrow">Second Portrait</p>
+                    <h2 class="photo-fallback__title">Load the companion portrait</h2>
+                    <p class="photo-fallback__body">
+                      Use the second photo to complete the couple-first mandap reveal.
+                    </p>
+                  </div>
+                </figure>
+              </div>
+            </div>
+
+            <article class="hero__copy panel">
+              <p class="eyebrow">Wedding Weekend Invitation</p>
+              <h1 class="hero__title">Dhruv <span>&amp;</span> Deeksha</h1>
+              <p class="hero__lede">
+                Scroll down and the mandap unfolds into their wedding story, bringing the couple, the
+                vows, and the celebration into focus one layer at a time.
+              </p>
+              <p class="hero__wedding-note">
+                Cocktail evening at <strong>A Dot by GNH</strong>, followed by the wedding ceremony,
+                varmala, and pheras at <strong>Amaara Farms</strong>.
+              </p>
+              <div class="hero__rituals">
+                <span>Cocktail Evening</span>
+                <span>Baraat</span>
+                <span>Varmala</span>
+                <span>Pheras</span>
+              </div>
+              <div class="hero__schedule">
+                <div class="hero__schedule-card">
+                  <span>Night One</span>
+                  <strong>A Dot by GNH</strong>
+                </div>
+                <div class="hero__schedule-card">
+                  <span>Wedding Day</span>
+                  <strong>Amaara Farms</strong>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="scroll-cue" aria-hidden="true">
+            <span></span>
+            Scroll to open the mandap
+          </div>
+        </div>
+      </section>
+
+      <section class="verse-band">
+        <div class="container">
+          <p>
+            Every wedding is remembered for its rituals, but it is loved for the little story that led
+            two people there in the first place.
+          </p>
+        </div>
+      </section>
+
+      <section class="love-story">
+        <div class="container">
+          <div class="love-story__intro panel" data-reveal>
+            <p class="eyebrow">Their Story</p>
+            <h2 class="section-title">How It Began, What Stayed, And What Grew</h2>
+            <p class="section-copy center-copy">
+              Before the mandap, there were the smaller beginnings: the first long conversation, the
+              first comfort that felt effortless, the first day both of them knew this was no longer just
+              chance. This chapter keeps the wedding personal by telling the love story behind it.
+            </p>
+          </div>
+
+          <div class="love-story__grid">
+            <article class="memory-card panel" data-reveal>
+              <span>How We Met</span>
+              <h3>A simple hello that refused to stay small</h3>
+              <p>
+                What began as a normal conversation slowly became the part of the day both of them
+                looked forward to most. One message led to another, and before anyone said it aloud,
+                there was already a quiet certainty growing between them.
+              </p>
+            </article>
+
+            <article class="memory-card panel" data-reveal>
+              <span>Best Times Together</span>
+              <h3>The kind of days that became favourites without trying</h3>
+              <p>
+                The best moments were never only the big ones. They were long drives, shared meals,
+                unplanned laughter, endless conversations, and that calm feeling of knowing the right
+                person was already beside you.
+              </p>
+            </article>
+
+            <article class="memory-card panel" data-reveal>
+              <span>What He Loves</span>
+              <h3>Her warmth, her grace, and the way she softens every room</h3>
+              <p>
+                He loves her calm strength, her thoughtful heart, and the way she can make ordinary days
+                feel meaningful. He loves that her presence carries both comfort and celebration at the
+                same time.
+              </p>
+            </article>
+
+            <article class="memory-card panel" data-reveal>
+              <span>What She Loves</span>
+              <h3>His steadiness, his humour, and the way he always shows up</h3>
+              <p>
+                She loves his sincerity, his reliability, and the warmth he brings to the people he
+                loves. She loves that with him, joy feels easy and the future feels safe.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="quirks">
+        <div class="container quirks__grid">
+          <article class="quirk-card" data-reveal>
+            <span>From His Side</span>
+            <h3>What he likes and what he lovingly complains about</h3>
+            <p>
+              He loves how deeply she cares, how beautifully she thinks through every detail, and how
+              quickly her smile changes the whole mood of a day. What he pretends to dislike is how she
+              can turn one quick outing into a full photo session, but secretly those are the moments he
+              remembers the most.
+            </p>
+          </article>
+
+          <article class="quirk-card" data-reveal>
+            <span>From Her Side</span>
+            <h3>What she likes and what she teases him for</h3>
+            <p>
+              She loves his patience, his loyalty, and the way he quietly takes care of everything that
+              matters. What she claims to dislike is his ability to say, “We’ll leave in five minutes,”
+              and still not be ready half an hour later, but even that has become part of the charm she
+              now smiles at.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="letters">
+        <div class="container letters__grid">
+          <article class="letter-card panel" data-reveal>
+            <p class="eyebrow">From Dhruv To Deeksha</p>
+            <h2 class="section-title">You became home so naturally that I almost missed the moment it happened.</h2>
+            <p class="section-copy">
+              I love the way you understand without needing long explanations, the way your presence
+              turns noise into peace, and the way every future plan feels brighter because you are in it.
+              Loving you feels both grounding and extraordinary, and that is why standing beside you at
+              the mandap feels less like a new beginning and more like arriving where my heart was always
+              headed.
+            </p>
+          </article>
+
+          <article class="letter-card panel" data-reveal>
+            <p class="eyebrow">From Deeksha To Dhruv</p>
+            <h2 class="section-title">With you, love feels steady, safe, and still full of sparkle.</h2>
+            <p class="section-copy">
+              I love the way you care in quiet ways, the way you protect what matters, and the way you
+              make even the simplest moments feel full. You have given me laughter, comfort, patience,
+              and the kind of partnership that makes forever feel beautiful instead of far away. That is
+              why this wedding means so much to me: it is the celebration of the love I already trust.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="scene arrival" data-scene>
+        <div class="scene__sticky">
+          <div class="container arrival__grid">
+            <div class="arrival__theatre">
+              <figure class="photo-card photo-card--tall interactive-tilt" data-reveal>
+                <img
+                  src="assets/adot-afterparty.jpg"
+                  alt="Cocktail stage lighting inside a party venue"
+                  loading="lazy"
+                />
+                <figcaption class="photo-caption">A Dot energy after dark</figcaption>
+              </figure>
+
+              <figure class="vibe-card vibe-card--cocktail interactive-tilt" data-reveal>
+                <img
+                  src="assets/adot-cocktail-lounge.jpg"
+                  alt="Cocktail lounge with taps and neon martini sign"
+                  loading="lazy"
+                />
+                <figcaption>Signature drinks, laughter, and the first cheers</figcaption>
+              </figure>
+            </div>
+
+            <article class="panel arrival__copy" data-reveal>
+              <p class="eyebrow">Chapter I</p>
+              <h2 class="section-title">Cocktail Night at A Dot by GNH</h2>
+              <p class="section-copy">
+                This chapter leans into a polished indoor mood: chandeliers, a sharp stage reveal,
+                welcome drinks, toasts, camera flashes, and the kind of dance floor that convinces even
+                the shy cousins to stay a little longer.
+              </p>
+              <p class="section-copy">
+                The first night should feel glamorous, social, and fast-moving, with a little sparkle in
+                every corner of the room.
+              </p>
+              <div class="arrival__tokens">
+                <span>Welcome cocktails</span>
+                <span>Live DJ energy</span>
+                <span>Mirror-lit stage moments</span>
+                <span>First night glamour</span>
+              </div>
+              <blockquote class="arrival__quote">
+                Let the opening evening feel crisp, celebratory, and impossible to leave early.
+              </blockquote>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="venue-gallery">
+        <div class="container venue-gallery__intro" data-reveal>
+          <p class="eyebrow">The Locations</p>
+          <h2 class="section-title">Two venues. Two moods. One wedding story.</h2>
+          <p class="section-copy center-copy">
+            The imagery now moves from cocktail-night shine into open-air wedding softness so the page
+            feels anchored to the real places you chose.
+          </p>
+        </div>
+
+        <div class="venue-gallery__grid">
+          <figure class="gallery-card interactive-tilt" data-reveal>
+            <img src="assets/adot-banquet.jpg" alt="Ballroom chandeliers and banquet seating" loading="lazy" />
+            <figcaption>A Dot by GNH ballroom grandeur</figcaption>
+          </figure>
+          <figure class="gallery-card interactive-tilt" data-reveal>
+            <img src="assets/adot-cocktail-lounge.jpg" alt="Cocktail bar and lounge details" loading="lazy" />
+            <figcaption>The cocktail chapter in close-up</figcaption>
+          </figure>
+          <figure class="gallery-card interactive-tilt" data-reveal>
+            <img src="assets/amaara-aisle.jpg" alt="Wedding aisle lined with chairs and pastel ribbons" loading="lazy" />
+            <figcaption>Amaara Farms opens into the ceremony</figcaption>
+          </figure>
+          <figure class="gallery-card interactive-tilt" data-reveal>
+            <img src="assets/amaara-canopy.jpg" alt="Outdoor wedding canopy draped with florals" loading="lazy" />
+            <figcaption>Canopies, florals, and softer daylight</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="scene story" data-scene>
+        <div class="scene__sticky story__sticky">
+          <div class="story__backdrop" aria-hidden="true">
+            <img src="assets/amaara-canopy.jpg" alt="" loading="lazy" />
+          </div>
+
+          <div class="container story__grid">
+            <article class="panel story__copy" data-reveal>
+              <p class="eyebrow">Chapter II</p>
+              <h2 class="section-title">The Wedding at Amaara Farms</h2>
+              <p class="section-copy">
+                At Amaara Farms the story opens wider. The atmosphere turns gentler and more ceremonial:
+                a graceful baraat arrival, varmala moments across the lawns, pheras under the mandap,
+                and dinner beneath a quieter glow.
+              </p>
+              <p class="section-copy">
+                This section is meant to feel more rooted in ritual, more spacious in movement, and more
+                emotional than the cocktail chapter before it.
+              </p>
+              <div class="story__steps">
+                <div><strong>1</strong><span>Baraat enters the lawns</span></div>
+                <div><strong>2</strong><span>Varmala moment on the stage</span></div>
+                <div><strong>3</strong><span>Pheras under the mandap</span></div>
+                <div><strong>4</strong><span>Dinner and blessings under lights</span></div>
+              </div>
+            </article>
+
+            <div class="story__stack">
+              <figure class="photo-card photo-card--wide interactive-tilt" data-reveal>
+                <img
+                  src="assets/amaara-aisle.jpg"
+                  alt="Outdoor wedding aisle at a bright open-air venue"
+                  loading="lazy"
+                />
+                <figcaption class="photo-caption">Amaara turns the page toward the ceremony</figcaption>
+              </figure>
+
+              <figure
+                class="photo-card photo-card--arched photo-card--small interactive-tilt"
+                data-photo-target="portraitTwo"
+                data-reveal
+              >
+                <img
+                  src="assets/dhruv-deeksha-2.jpg"
+                  alt="Dhruv and Deeksha portrait two"
+                  data-photo-img="portraitTwo"
+                  loading="lazy"
+                />
+                <div class="photo-fallback photo-fallback--sky">
+                  <p class="photo-fallback__eyebrow">Second Portrait</p>
+                  <h2 class="photo-fallback__title">Load the wedding-day portrait</h2>
+                  <p class="photo-fallback__body">
+                    Add the second couple photo so the wedding chapter lands with a personal reveal.
+                  </p>
+                </div>
+                <figcaption class="photo-caption">A portrait that belongs in the wedding chapter</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="itinerary">
+        <div class="container">
+          <div class="itinerary__intro" data-reveal>
+            <p class="eyebrow">Weekend Flow</p>
+            <h2 class="section-title">What happens where</h2>
+            <p class="section-copy center-copy">
+              The emotional map is already in place. Once you lock dates and timings, these cards become
+              your final guest guide.
+            </p>
+          </div>
+
+          <div class="itinerary__grid">
+            <article class="itinerary-card" data-reveal>
+              <span>Night One</span>
+              <h3>Welcome Drinks at A Dot</h3>
+              <p>Guests arrive in Gurugram, settle in, and step straight into the cocktail mood.</p>
+            </article>
+            <article class="itinerary-card" data-reveal>
+              <span>Cocktail</span>
+              <h3>Toasts, DJ, and dancing</h3>
+              <p>A Dot carries the sharper glamour: stage moments, music, and the first full-party energy.</p>
+            </article>
+            <article class="itinerary-card" data-reveal>
+              <span>Wedding Day</span>
+              <h3>Baraat enters Amaara Farms</h3>
+              <p>The next chapter opens outdoors, with the arrival expanding into the lawns and ceremony spaces.</p>
+            </article>
+            <article class="itinerary-card" data-reveal>
+              <span>Mandap</span>
+              <h3>Varmala and pheras</h3>
+              <p>The sacred heart of the weekend belongs beneath the floral mandap and family blessings.</p>
+            </article>
+            <article class="itinerary-card" data-reveal>
+              <span>After</span>
+              <h3>Dinner under the lights</h3>
+              <p>The wedding closes with food, warmth, photographs, and the last lingering hugs of the night.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene crescendo" data-scene>
+        <div class="scene__sticky crescendo__sticky">
+          <div class="crescendo__backdrop" aria-hidden="true">
+            <img src="assets/amaara-table.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="crescendo__veil" aria-hidden="true"></div>
+
+          <div class="container crescendo__grid">
+            <div class="crescendo__photos">
+              <figure
+                class="photo-card photo-card--arched interactive-tilt"
+                data-photo-target="portraitTwo"
+                data-reveal
+              >
+                <img
+                  src="assets/dhruv-deeksha-2.jpg"
+                  alt="Dhruv and Deeksha portrait finale"
+                  data-photo-img="portraitTwo"
+                  loading="lazy"
+                />
+                <div class="photo-fallback photo-fallback--sky">
+                  <p class="photo-fallback__eyebrow">Finale</p>
+                  <h2 class="photo-fallback__title">Portrait finale</h2>
+                  <p class="photo-fallback__body">Your second portrait returns here for the closing reveal.</p>
+                </div>
+              </figure>
+
+              <figure class="vibe-card vibe-card--mandap interactive-tilt" data-reveal>
+                <img
+                  src="assets/amaara-table.jpg"
+                  alt="Wedding tablescape prepared for the ceremony evening"
+                  loading="lazy"
+                />
+                <figcaption>The wedding settles into dinner, blessings, and a softer glow</figcaption>
+              </figure>
+            </div>
+
+            <article class="panel crescendo__copy" data-reveal>
+              <p class="eyebrow">Chapter III</p>
+              <h2 class="section-title section-title--light">Two Venues. One Wedding Story.</h2>
+              <p class="section-copy section-copy--light">
+                The page is now built around your actual celebration flow: cocktail night at A Dot by
+                GNH, then the wedding at Amaara Farms. The emotional switch between the two locations is
+                already designed into the scroll.
+              </p>
+              <p class="section-copy section-copy--light">
+                Before publishing, you only need to lock the final dates, add RSVP details, and replace
+                the two portrait slots with the real couple photos you want guests to see.
+              </p>
+
+              <div class="detail-grid">
+                <div class="detail-card">
+                  <span>Cocktail</span>
+                  <strong>A Dot by GNH</strong>
+                </div>
+                <div class="detail-card">
+                  <span>Wedding</span>
+                  <strong>Amaara Farms</strong>
+                </div>
+                <div class="detail-card">
+                  <span>Dates</span>
+                  <strong>Add final dates</strong>
+                </div>
+                <div class="detail-card">
+                  <span>RSVP</span>
+                  <strong>Add WhatsApp or phone</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="finale">
+        <div class="container finale__panel panel" data-reveal>
+          <p class="eyebrow">Final Blessing</p>
+          <h2 class="section-title">Come for the toast. Stay for the vows.</h2>
+          <p class="section-copy center-copy">
+            The venue mood, function flow, and mandap reveal are now integrated. Drop in the final
+            portraits, dates, and RSVP details, and the invitation will be ready to share.
+          </p>
+          <p class="finale__note">
+            If you later receive official venue or photographer shots, you can swap the bundled
+            inspiration images in <code>assets/</code> without changing the layout.
+          </p>
+          <div class="finale__actions">
+            <a class="finale__link" href="./hosting-guide.html">Open GitHub and hosting guide</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script defer src="app.js"></script>
+  </body>
+</html>

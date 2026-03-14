@@ -1,0 +1,341 @@
+:root {
+  --bg: #160d12;
+  --bg-soft: #23121c;
+  --panel: rgba(255, 247, 236, 0.9);
+  --panel-soft: rgba(255, 247, 236, 0.08);
+  --ink: #321f1a;
+  --ink-soft: rgba(50, 31, 26, 0.74);
+  --ivory: #fbf4ea;
+  --gold: #d9aa5e;
+  --gold-soft: rgba(217, 170, 94, 0.18);
+  --ruby: #7e2742;
+  --line: rgba(240, 213, 167, 0.16);
+  --shadow: 0 24px 70px rgba(10, 5, 10, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ivory);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(217, 170, 94, 0.14), transparent 24%),
+    radial-gradient(circle at 80% 20%, rgba(126, 39, 66, 0.16), transparent 24%),
+    linear-gradient(180deg, #160d12 0%, #1f1118 40%, #12080d 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.guide-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05), transparent),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+.guide-hero {
+  position: relative;
+  padding: 5.5rem 1rem 2.5rem;
+}
+
+.guide-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(22, 13, 18, 0.2), rgba(22, 13, 18, 0.82)),
+    url("assets/mandap-entrance.jpg") center / cover;
+  opacity: 0.26;
+  pointer-events: none;
+}
+
+.guide-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(980px, calc(100% - 1rem));
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 36px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(30, 16, 24, 0.82), rgba(18, 10, 16, 0.74));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.guide-eyebrow {
+  margin: 0 0 0.9rem;
+  color: rgba(244, 216, 163, 0.86);
+  font-family: "Cinzel", serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.guide-hero h1,
+.guide-card h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  line-height: 0.94;
+}
+
+.guide-hero h1 {
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+}
+
+.guide-hero__lede {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: rgba(251, 244, 234, 0.82);
+  line-height: 1.82;
+}
+
+.guide-hero__actions,
+.guide-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.guide-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 213, 167, 0.2);
+  background: linear-gradient(180deg, rgba(255, 247, 236, 0.14), rgba(255, 247, 236, 0.06));
+  color: var(--ivory);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.guide-button--ghost {
+  background: transparent;
+}
+
+.guide-shell {
+  width: min(1320px, calc(100% - 1rem));
+  margin: 0 auto;
+  padding: 0 0 4rem;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.guide-nav {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  padding: 1.2rem;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(28, 15, 22, 0.88), rgba(16, 10, 15, 0.82));
+  box-shadow: var(--shadow);
+}
+
+.guide-nav__title {
+  margin: 0 0 0.8rem;
+  color: rgba(244, 216, 163, 0.86);
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.guide-nav a {
+  display: block;
+  padding: 0.75rem 0.85rem;
+  border-radius: 18px;
+  color: rgba(251, 244, 234, 0.82);
+  text-decoration: none;
+}
+
+.guide-nav a:hover {
+  background: rgba(255, 247, 236, 0.08);
+}
+
+.guide-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.guide-card {
+  padding: 1.6rem;
+  border-radius: 32px;
+  border: 1px solid rgba(240, 213, 167, 0.16);
+  background: linear-gradient(180deg, rgba(255, 248, 239, 0.94), rgba(247, 236, 218, 0.78));
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.guide-card h2 {
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+}
+
+.guide-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.guide-grid--three {
+  margin-top: 1.3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.guide-grid--two {
+  margin-top: 1.2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.guide-mini-card,
+.guide-subcard {
+  padding: 1.2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(178, 126, 81, 0.14);
+  background: rgba(255, 252, 246, 0.58);
+}
+
+.guide-mini-card span {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #f6d79b, #d9aa5e);
+  color: #1a1012;
+  font-weight: 800;
+}
+
+.guide-mini-card h3,
+.guide-subcard h3,
+.guide-steps h3 {
+  margin: 0.9rem 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 0.98;
+}
+
+.guide-mini-card p,
+.guide-subcard p,
+.guide-steps p,
+.guide-card p,
+.guide-list {
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.guide-steps {
+  margin: 1.2rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.guide-steps li + li {
+  margin-top: 1.4rem;
+}
+
+.guide-list {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.guide-code {
+  margin-top: 0.9rem;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 213, 167, 0.14);
+  background: #1d1218;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.guide-code__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(240, 213, 167, 0.12);
+  color: rgba(251, 244, 234, 0.8);
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.guide-code__bar button {
+  border: 1px solid rgba(240, 213, 167, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 247, 236, 0.08);
+  color: var(--ivory);
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+
+.guide-code pre {
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.guide-code code {
+  color: rgba(251, 244, 234, 0.92);
+  font-family: "SF Mono", "Menlo", monospace;
+  line-height: 1.7;
+}
+
+.guide-callout {
+  margin-top: 1.2rem;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  background: rgba(217, 170, 94, 0.14);
+  border: 1px solid rgba(217, 170, 94, 0.16);
+  color: var(--ink);
+}
+
+.guide-callout--soft {
+  background: rgba(126, 39, 66, 0.08);
+  border-color: rgba(126, 39, 66, 0.12);
+}
+
+@media (max-width: 1040px) {
+  .guide-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-nav {
+    position: static;
+  }
+
+  .guide-grid--three,
+  .guide-grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .guide-hero {
+    padding-top: 4.5rem;
+  }
+
+  .guide-hero__inner,
+  .guide-card {
+    padding: 1.2rem;
+    border-radius: 24px;
+  }
+
+  .guide-shell {
+    width: min(100% - 1rem, 1320px);
+  }
+}
